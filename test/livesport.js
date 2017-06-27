@@ -1,10 +1,9 @@
-import liveport  from '../server/liveport';
+var expect = require("chai").expect
+var should = require("chai").should()
+var scrap = require("../server/livesport").scrap
 
-
-describe('scrapping', function () {
-    it('scraps root', function (done) {
-
-        let json = liveport.scrap();
-        json[1].sport.should.equal('Tennis');
-    });
-});
+describe("Scrapping livesports", function () {
+    it('base returns Tennis', function () {
+        scrap().games[1].sport.should.be.equal('Tennis');
+    })
+})

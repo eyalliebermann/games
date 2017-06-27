@@ -1,9 +1,3 @@
-
-
-
-export default class liveport
-{
-    scrap(){
-        return [{},{sport:'Tennis'}];
-    }
+module.exports.scrap = function () {
+    return {games:[{},{sport:'Tennis'}]};
 }
