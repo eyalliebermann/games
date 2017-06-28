@@ -4,9 +4,11 @@
   "description": "game scraper",
   "main": "server.js",
   "scripts": {
-    "test": "./node_modules/.bin/mocha",
+    "postinstall": "cd client && npm install",
     "build": "webpack",
-    "heroku-postbuild": "./node_modules/.bin/webpack -p --config ./webpack.config.js --progress"
+    "heroku-postbuild": "webpack -p --config ./webpack.config.js --progress",
+    "test": "./node_modules/.bin/mocha",
+    "prod": "NODE_ENV=production node server.js"
   },
   "repository": {
     "type": "git",
