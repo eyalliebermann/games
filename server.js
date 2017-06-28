@@ -4,6 +4,7 @@ const livesport = require('./server/livesport');
 
 app.use('/', express.static('dist'))
 
+app.set('port', (process.env.PORT || 3333));
 
 app.get('/api/v1.0/games/', function (req, res) {
     livesport.scrap(function (result) {
@@ -11,6 +12,6 @@ app.get('/api/v1.0/games/', function (req, res) {
         });
     });
 
-app.listen(3000, function () {
+app.listen(app.get('port'), function () {
     console.log('App listening on port 3000!')
 });
