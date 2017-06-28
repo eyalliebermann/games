@@ -46,9 +46,11 @@ function parseVideoStreams(html) {
 
 
 function parseDate(text) {
-    return new Date(Date.parse(`${text} GMT`));
+    return text;
+   // return new Date(Date.parse(`${text} GMT`));
 }
 
 function parseCompetitors(text) {
-    return text.split(/\svs\s|\sv\s|\s@\s/).map(team => team.split(/\s\/\s/));
+    return text;
+    //return text.split(/\svs\s|\sv\s|\s@\s/).map(team => team.split(/\s\/\s/));
 }
