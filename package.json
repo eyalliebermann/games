@@ -5,7 +5,9 @@
   "main": "server.js",
   "scripts": {
     "test": "./node_modules/.bin/mocha",
-    "build": "webpack"
+    "build": "webpack",
+    "heroku-postbuild": "webpack -p --config ./webpack.config.js --progress"
+
   },
   "repository": {
     "type": "git",
