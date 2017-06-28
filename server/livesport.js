@@ -34,10 +34,10 @@ function parseVideoStreams(html) {
     let videostreams = [];
     $('li', '.cal-list').each((i, elm) => {
         videostreams.push({
-            streamdate: parseDate($(elm).children().first().attr('data-streamdate')),
+            date: parseDate($(elm).children().first().attr('data-streamdate')),
             sport: $(elm).children().eq(1).first().text(),
-            competitors: parseCompetitors($(elm).children().eq(2).children().first().text()),
             league: $(elm).children().eq(2).children().eq(1).text(),
+            competitors: parseCompetitors($(elm).children().eq(2).children().first().text()),
             sourceHtml: $(elm).html()
         });
     });
