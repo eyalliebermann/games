@@ -7,7 +7,7 @@ export default class App extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            games: [{date:'1',league:'2',sport:'4',competitors:'45'}]
+            games: [{sport:'SPORT',league:'LEAGUE',competitors:'COMPETITORS',date:Date.now()}]
         };
     }
 
@@ -21,10 +21,12 @@ export default class App extends Component {
          let rows = this.state.games.map( (game) => 
              (
                 <tr className="game-row">
-                    <td>{game.date}</td>
                     <td>{game.sport}</td>
                     <td>{game.league}</td>
                     <td>{game.competitors}</td>
+                    <td>{new Date(game.date).toLocaleDateString('en-GB') 
+                    + ' ' + 
+                    new Date(game.date).toLocaleTimeString('en-GB',{hour: '2-digit', minute:'2-digit'})  }</td>
                 </tr>
             )
          );
@@ -34,10 +36,10 @@ export default class App extends Component {
                 <table className="table table-striped table-hover">
                     <thead>
                         <tr>
-                            <th>Date</th>
                             <th>Sport</th>
                             <th>League</th>
                             <th>Competitors</th>
+                            <th>Date</th>
                         </tr>
                     </thead>
                     <tbody>

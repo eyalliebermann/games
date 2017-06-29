@@ -23116,11 +23116,6 @@ var App = function (_Component) {
                     __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                         "td",
                         null,
-                        game.date
-                    ),
-                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                        "td",
-                        null,
                         game.sport
                     ),
                     __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
@@ -23132,6 +23127,11 @@ var App = function (_Component) {
                         "td",
                         null,
                         game.competitors
+                    ),
+                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                        "td",
+                        null,
+                        new Date(game.date).toLocaleDateString('en-GB') + ' ' + new Date(game.date).toLocaleTimeString('en-GB', { hour: '2-digit', minute: '2-digit' })
                     )
                 );
             });
@@ -23151,11 +23151,6 @@ var App = function (_Component) {
                             __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                                 "th",
                                 null,
-                                "Date"
-                            ),
-                            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                                "th",
-                                null,
                                 "Sport"
                             ),
                             __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
@@ -23167,6 +23162,11 @@ var App = function (_Component) {
                                 "th",
                                 null,
                                 "Competitors"
+                            ),
+                            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                                "th",
+                                null,
+                                "Date"
                             )
                         )
                     ),
@@ -23188,7 +23188,7 @@ var App = function (_Component) {
         };
 
         _this.state = {
-            games: [{ date: '1', league: '2', sport: '4', competitors: '45' }]
+            games: [{ sport: 'SPORT', league: 'LEAGUE', competitors: 'COMPETITORS', date: Date.now() }]
         };
         return _this;
     }
