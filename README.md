@@ -1,4 +1,4 @@
-# game scrapper
+# Game scrapper
 This application is an exercise in web scrapping. 
 It shows a possible path and raises some questions I would try to address here
 It's never meant to be production mature though.
