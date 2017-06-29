@@ -21,7 +21,7 @@ const livesport = require('./server/livesport');
     app.set('port', (process.env.PORT || 3333));
 
     app.get('/api/v1.0/games/', function (req, res) {
-        res.send(_games);
+        res.json(_games);
     });
 
     setInterval(() => {
