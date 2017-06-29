@@ -23166,8 +23166,8 @@ var App = function (_Component) {
                                     __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                                         "a",
                                         { href: "#" },
-                                        "The time is ",
-                                        new Date().toLocaleString('en-GB')
+                                        "It's ",
+                                        new Date().toLocaleTimeString('en-GB')
                                     )
                                 ),
                                 __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
@@ -23177,7 +23177,7 @@ var App = function (_Component) {
                                         "a",
                                         { href: "#" },
                                         "Last updated on ",
-                                        new Date(_this.state.updated).toLocaleString('en-GB')
+                                        new Date(_this.state.updated).toLocaleTimeString('en-GB')
                                     )
                                 )
                             ),
