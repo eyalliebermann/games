@@ -40,8 +40,8 @@ export default class App extends Component {
             </div>
             <div id="navbar" className="navbar-collapse collapse">
                 <ul className="nav navbar-nav navbar-left">
-                    <li><a href="#">The time is {new Date().toLocaleString('en-GB')}</a></li> 
-                    <li><a href="#">Last updated on {new Date(this.state.updated).toLocaleString('en-GB')}</a></li> 
+                    <li><a href="#">It's {new Date().toLocaleTimeString('en-GB')}</a></li> 
+                    <li><a href="#">Last updated on {new Date(this.state.updated).toLocaleTimeString('en-GB')}</a></li> 
 
                 </ul>
                 <ul className="nav navbar-nav navbar-right">
