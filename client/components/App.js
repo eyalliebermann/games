@@ -13,7 +13,7 @@ export default class App extends Component {
 
     componentDidMount = () => {
         axios.get('/api/v1.0/games')
-            .then(res => this.setState({ games: res.data.games }))
+            .then(res => this.setState(res.data))
             .catch(logNetworkError);
     }
 
