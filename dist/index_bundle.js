@@ -23104,7 +23104,7 @@ var App = function (_Component) {
 
         _this.componentDidMount = function () {
             __WEBPACK_IMPORTED_MODULE_1_axios___default.a.get('/api/v1.0/games').then(function (res) {
-                return _this.setState({ games: res.data });
+                return _this.setState({ games: res.data.games });
             }).catch(logNetworkError);
         };
 

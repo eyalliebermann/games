@@ -23,12 +23,8 @@ function scrapUrls(urls, callback) {
             return merged;
         }))
         .then((arr) => {
-            console.log(`Array length pre cleanup: ${arr.length}`);
-            clean = cleanDup(arr);
-            console.log(`Array length post cleanup is: ${clean.length}`);
-            return clean
+            return cleanDup(arr);
         });
-      //  .then(dedupped=>dedupped.map(game=>{});
 }
 
 function parseVideoStreams(html) {
