@@ -23104,8 +23104,8 @@ var App = function (_Component) {
 
         _this.componentDidMount = function () {
             __WEBPACK_IMPORTED_MODULE_1_axios___default.a.get('/api/v1.0/games').then(function (res) {
-                return _this.setState({ games: res.data.games });
-            }).catch(logNetworkError);
+                return _this.setState(res.data);
+            }).catch(_this.logNetworkError);
         };
 
         _this.render = function () {
@@ -23177,7 +23177,7 @@ var App = function (_Component) {
                                         "a",
                                         { href: "#" },
                                         "Last updated on ",
-                                        Date.parse(_this.state.updated).toLocaleString('en-GB')
+                                        new Date(_this.state.updated).toLocaleString('en-GB')
                                     )
                                 )
                             ),
@@ -24178,7 +24178,7 @@ exports = module.exports = __webpack_require__(213)(undefined);
 
 
 // module
-exports.push([module.i, "body { \n    padding-top: 65px; \n}\n\n.table-component .table {\n    table-layout:fixed;\n}\n\n.table-component .table td, .table th {\n  word-wrap:break-word;\n  word-break:break-all;\n}\n\ntable {\n        width: 100%;\n    }\n\nthead, tbody, tr, td, th { display: block; }\n\ntr:after {\n    content: ' ';\n    display: block;\n    visibility: hidden;\n    clear: both;\n}\n\nthead th {\n    height: 30px;\n\n    /*text-align: left;*/\n}\n\ntbody {\n    height: 120px;\n    overflow-y: auto;\n}\n\nthead {\n    /* fallback */\n}\n\n\ntbody td, thead th {\n    width: 19.2%;\n    float: left;\n}", ""]);
+exports.push([module.i, "body { \n    padding-top: 65px; \n}\n\n.table-component .table {\n    table-layout:fixed;\n}\n\n.table-component .table td, .table th {\n  word-wrap:break-word;\n  word-break:break-all;\n}\n", ""]);
 
 // exports
 
