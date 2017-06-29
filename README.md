@@ -13,7 +13,7 @@ cheerio is used to scrap server rendered html page.
 Additional queries or an entire headless browser might be needed to scrap dynamic client rendered content
 The data is exposed through an api
 
-## client
+## Client
 React table gets the data from the server
 
 # What's next
