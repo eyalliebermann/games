@@ -7,15 +7,16 @@ const urls = ['http://www.livesport.co.uk/',
     'http://www.livesport.co.uk/category/basketball/'
 ];
 
-module.exports.scrap = function (callback) {
+module.exports.scrap = function () {
     console.log('\n\n\n livesport scrap scport\n\n\n')
-    return scrapUrls(urls, callback);
+    return scrapUrls(urls);
+  
 }
 
 
 
 function scrapUrls(urls, callback) {
-    axios.all(urls.map(url => axios.get(url)))
+    return axios.all(urls.map(url => axios.get(url)))
         .then(axios.spread(function (...responses) {
             let arrays = responses.map(response => parseVideoStreams(response.data));
             let merged = [].concat.apply([], arrays);
@@ -24,8 +25,6 @@ function scrapUrls(urls, callback) {
         .then((arr) => {
             console.log(JSON.stringify(arr, null, 4));
             return (arr);
-        }).then(function (json) {
-            callback(json);
         });
 }
 
