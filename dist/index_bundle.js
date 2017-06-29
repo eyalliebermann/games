@@ -23109,10 +23109,10 @@ var App = function (_Component) {
         };
 
         _this.render = function () {
-            var rows = _this.state.games.map(function (game) {
+            var rows = _this.state.games.map(function (game, indx) {
                 return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                     "tr",
-                    { className: "game-row" },
+                    { className: "game-row", key: indx },
                     __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                         "td",
                         null,
@@ -23138,42 +23138,108 @@ var App = function (_Component) {
 
             return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                 "div",
-                { className: "table-component col-xs-12" },
+                null,
                 __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                    "table",
-                    { className: "table table-striped table-hover" },
+                    "nav",
+                    { className: "navbar navbar-default navbar-fixed-top" },
                     __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                        "thead",
-                        null,
+                        "div",
+                        { className: "container" },
                         __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                            "tr",
-                            null,
+                            "div",
+                            { className: "navbar-header" },
                             __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                                "th",
-                                null,
-                                "Sport"
+                                "a",
+                                { className: "navbar-brand", href: "#" },
+                                "Game Scrapper"
+                            )
+                        ),
+                        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                            "div",
+                            { id: "navbar", className: "navbar-collapse collapse" },
+                            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                                "ul",
+                                { className: "nav navbar-nav navbar-left" },
+                                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                                    "li",
+                                    null,
+                                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                                        "a",
+                                        { href: "#" },
+                                        "The time is ",
+                                        new Date().toLocaleString('en-GB')
+                                    )
+                                ),
+                                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                                    "li",
+                                    null,
+                                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                                        "a",
+                                        { href: "#" },
+                                        "Last updated on ",
+                                        Date.parse(_this.state.updated).toLocaleString('en-GB')
+                                    )
+                                )
                             ),
                             __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                                "th",
-                                null,
-                                "League"
-                            ),
-                            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                                "th",
-                                null,
-                                "Competitors"
-                            ),
-                            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                                "th",
-                                null,
-                                "Date"
+                                "ul",
+                                { className: "nav navbar-nav navbar-right" },
+                                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                                    "li",
+                                    null,
+                                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                                        "a",
+                                        { href: "https://www.linkedin.com/in/eyalliebermann/" },
+                                        "By Eyal Liebermann"
+                                    )
+                                )
                             )
                         )
-                    ),
+                    )
+                ),
+                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                    "div",
+                    { className: "container" },
                     __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                        "tbody",
-                        null,
-                        rows
+                        "div",
+                        { className: "table-component col-xs-12" },
+                        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                            "table",
+                            { className: "table table-striped table-hover" },
+                            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                                "thead",
+                                null,
+                                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                                    "tr",
+                                    null,
+                                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                                        "th",
+                                        null,
+                                        "Sport"
+                                    ),
+                                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                                        "th",
+                                        null,
+                                        "League"
+                                    ),
+                                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                                        "th",
+                                        null,
+                                        "Competitors"
+                                    ),
+                                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                                        "th",
+                                        null,
+                                        "Date"
+                                    )
+                                )
+                            ),
+                            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                                "tbody",
+                                null,
+                                rows
+                            )
+                        )
                     )
                 )
             );
@@ -24112,7 +24178,7 @@ exports = module.exports = __webpack_require__(213)(undefined);
 
 
 // module
-exports.push([module.i, ".table-component .table {\n    table-layout:fixed;\n}\n\n.table-component .table td, .table th {\n  word-wrap:break-word;\n  word-break:break-all;\n}", ""]);
+exports.push([module.i, "body { \n    padding-top: 65px; \n}\n\n.table-component .table {\n    table-layout:fixed;\n}\n\n.table-component .table td, .table th {\n  word-wrap:break-word;\n  word-break:break-all;\n}\n\ntable {\n        width: 100%;\n    }\n\nthead, tbody, tr, td, th { display: block; }\n\ntr:after {\n    content: ' ';\n    display: block;\n    visibility: hidden;\n    clear: both;\n}\n\nthead th {\n    height: 30px;\n\n    /*text-align: left;*/\n}\n\ntbody {\n    height: 120px;\n    overflow-y: auto;\n}\n\nthead {\n    /* fallback */\n}\n\n\ntbody td, thead th {\n    width: 19.2%;\n    float: left;\n}", ""]);
 
 // exports
 

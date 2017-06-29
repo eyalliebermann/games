@@ -44,8 +44,8 @@ function parseVideoStreams(html) {
             date: parseDate($(elm).children().first().attr('data-streamdate')),
             sport: $(elm).children().eq(1).first().text(),
             league: $(elm).children().eq(2).children().eq(1).text(),
-            competitors: parseCompetitors($(elm).children().eq(2).children().first().text()),
-            sourceHtml: $(elm).html()
+            competitors: parseCompetitors($(elm).children().eq(2).children().first().text())//,
+        //    sourceHtml: $(elm).html()
         });
     });
     return (videostreams);

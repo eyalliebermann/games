@@ -7,12 +7,12 @@ const livesport = require('./server/livesport');
     //bootstrapping
     _initialized = false;
     _games = {
-        updated: Date.now,
+        updated: new Date().toISOString(),
         games: [{
             sport: 'Fake',
             league: 'fake',
             competitors: 'fake',
-            date: Date.now
+            date: new Date().toISOString(),
         }]
     };
 
@@ -21,7 +21,7 @@ const livesport = require('./server/livesport');
     app.set('port', (process.env.PORT || 3333));
 
     app.get('/api/v1.0/games/', function (req, res) {
-        res.json(_games);
+        res.send(_games);
     });
 
     setInterval(() => {
@@ -30,10 +30,10 @@ const livesport = require('./server/livesport');
             _initialized = true;
         }
 
-        livesport.scrap().then(games => _games = {
-            updated: Date.now,
+        livesport.scrap().then((games) => _games = {
+            updated: new Date().toISOString(),
             games: games
-        })
+        });
     }, 5000);
 
     function startListen() {

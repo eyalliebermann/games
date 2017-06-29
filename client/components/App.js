@@ -18,9 +18,9 @@ export default class App extends Component {
     }
 
     render = () => {
-         let rows = this.state.games.map( (game) => 
+         let rows = this.state.games.map( (game,indx) => 
              (
-                <tr className="game-row">
+                <tr className="game-row" key={indx}>
                     <td>{game.sport}</td>
                     <td>{game.league}</td>
                     <td>{game.competitors}</td>
@@ -31,26 +31,48 @@ export default class App extends Component {
             )
          );
          
-   return (
-            <div className="table-component col-xs-12">
-                <table className="table table-striped table-hover">
-                    <thead>
-                        <tr>
-                            <th>Sport</th>
-                            <th>League</th>
-                            <th>Competitors</th>
-                            <th>Date</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        {rows}
-                    </tbody>
-                </table>
+    return (
+        <div>
+            <nav className="navbar navbar-default navbar-fixed-top">
+            <div className="container">
+            <div className="navbar-header">
+                <a className="navbar-brand" href="#">Game Scrapper</a>
             </div>
-        );
+            <div id="navbar" className="navbar-collapse collapse">
+                <ul className="nav navbar-nav navbar-left">
+                    <li><a href="#">The time is {new Date().toLocaleString('en-GB')}</a></li> 
+                    <li><a href="#">Last updated on {new Date(this.state.updated).toLocaleString('en-GB')}</a></li> 
+
+                </ul>
+                <ul className="nav navbar-nav navbar-right">
+                    <li><a href="https://www.linkedin.com/in/eyalliebermann/">By Eyal Liebermann</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+            <div className="container">
+                <div className="table-component col-xs-12">
+                    <table className="table table-striped table-hover">
+                        <thead>
+                            <tr>
+                                <th>Sport</th>
+                                <th>League</th>
+                                <th>Competitors</th>
+                                <th>Date</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {rows}
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            </div>
+            );
   }
 
-  logNetworkError = (err) => {
+logNetworkError = (err) => {
         if (err.response) {
             console.log('Data', err.response.data);
             console.log('Status', err.response.status);
